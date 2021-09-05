@@ -1,51 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZINAE- Zinae is not an emulator</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="bootstrap.css"/>
+    <style>
+        .field{
+            width: 80pt;
+            border-style: groove;
+           
+        }
+      
+
+        td{
+            padding-right: 10px;   
+        }
+     
+    </style>
+
 </head>
+
 <body>
+    <div class="container-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-1">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ZINAE</a>
+            </div>
+    </div>
 
-    <textarea name="editor" id="code" cols="30" rows="10"></textarea>
-    <table>
-        <tr>
-            <th>
-                Flags
-            </th>
-            <th>
-                Status
-            </th>
-        </tr>
-        <tr>
-            <td>
-                OF
-                (Overflow)
-            </td>
-            <td id="of">
+    <div class="row container-fluid">
 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                NG
-                (Negative)
-            </td>
-            <td id="ng">
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ZE
-                (Zero)
-            </td>
-            <td id="ZE">
-                
-            </td>
-        </tr>
-    </table>
+        <div class="col">
+            <textarea name="editor" id="editor" cols="60" rows="20"></textarea>
+            <button onclick="emulate()">Emulate</button>
+        </div>
+
+        
+            <div id="register-table-div" class="col">
+                <h><strong>Registers</strong></h>
+                <table>
+                    <tr>
+                        <td>AX</td>
+                        <td class="field" id="ax"></td>
+                        <!-- <td class="field" id="al"></td> -->
+                    </tr>
+                    <tr>
+                        <td>BX</td>
+                        <td class="field" id="bx"></td>
+                        <!-- <td class="field" id="bl"></td> -->
+                    </tr>
+                    <tr>
+                        <td>CX</td>
+                        <td class="field" id="cx"></td>
+                        <!-- <td class="field" id="cl"></td> -->
+                    </tr>
+                    <tr>
+                        <td>DX</td>
+                        <td class="field" id="dx"></td>
+                        <!-- <td class="field" id="dl"></td> -->
+                    </tr>
+                    <tr>
+                        <td>CS</td>
+                        <td colspan="2" class="field" id="cs"></td>
+                    </tr>
+                    <tr>
+                        <td>IP</td>
+                        <td colspan="2" class="field" id="ip"></td>
+                    </tr>
+                    <tr>
+                        <td>SS</td>
+                        <td colspan="2"class="field"  id="ss"></td>
+                    </tr>
+                    <tr>
+                        <td>SP</td>
+                        <td colspan="2"class="field"  id="sp"></td>
+                    </tr>
+                    <tr>
+                        <td>BP</td>
+                        <td colspan="2" class="field" id="bp"></td>
+                    </tr>
+                    <tr>
+                        <td>SI</td>
+                        <td colspan="2"class="field"  id="si"></td>
+                    </tr>
+                    <tr>
+                        <td>DI</td>
+                        <td colspan="2"class="field"  id="di"></td>
+                    </tr>
+                    <tr>
+                        <td>DS</td>
+                        <td colspan="2"class="field" id="ds"></td>
+                    </tr>
+                    <tr>
+                        <td>ES</td>
+                        <td colspan="2"class="field" id="es"></td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div id="flags-table-div" class="col">
+                <table>
+                    <tr>
+                        <th>Flags</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>CF</td>
+                        <td id="cf"  class="field" ></td>
+                    </tr> <!-- Carry flag -->
+                    <tr>
+                        <td>ZF</td>
+                        <td id="zf"  class="field" ></td>
+                    </tr> <!-- Zero flag -->
+                    <tr>
+                        <td>SF</td>
+                        <td id="sf"  class="field" ></td>
+                    </tr> <!-- Sign flag -->
+                    <tr>
+                        <td>OF</td>
+                        <td id="of"  class="field" ></td>
+                    </tr> <!-- Overflow flag -->
+                    <tr>
+                        <td>PF</td>
+                        <td id="pf"  class="field" ></td>
+                    </tr> <!-- Parity flag -->
+                    <tr>
+                        <td>AF</td>
+                        <td id="af"  class="field" ></td>
+                    </tr> <!-- Auxilary flag -->
+                    <tr>
+                        <td>IF</td>
+                        <td id="if"  class="field" ></td>
+                    </tr> <!-- Interrupt enable flag -->
+                    <tr>
+                        <td>DF</td>
+                        <td id="df"  class="field" ></td>
+                    </tr> <!-- Direction flag -->
+                </table>
+            </div>
+        
+        
+
+        
+    </div>
 </body>
+
 </html>
